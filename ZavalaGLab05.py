@@ -131,9 +131,16 @@ expected Scalene
 import math
 
 # Ask user for values of triangle sides
-side_one = float(input("Enter a positive float number in inches for triangle side: "))
-side_two = float(input("Enter a positive float number in inches for triangle side: "))
-side_three = float(input("Enter a positive float number in inches for triangle side: "))
+try: 
+    side_one = float(input("Enter a positive float number in inches for triangle side: "))
+    side_two = float(input("Enter a positive float number in inches for triangle side: "))
+    side_three = float(input("Enter a positive float number in inches for triangle side: "))
+except ValueError as message:
+    print(f"You did not enter a float number: {message}")
+    print(f"We will use the deafault values of 3,4,5. ")
+    side_one = 3
+    side_two = 4
+    side_three = 5
 print()
 
 # Checks if sides are negative. If they are end program
